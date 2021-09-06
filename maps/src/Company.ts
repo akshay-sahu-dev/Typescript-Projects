@@ -2,6 +2,7 @@ import faker from 'faker';
 
 export class Company {
   companyName: string;
+  catchPhrase: string;
   location: {
     lat: number;
     lng: number;
@@ -13,5 +14,11 @@ export class Company {
       lat: parseFloat(faker.address.latitude()),
       lng: parseFloat(faker.address.longitude()),
     };
+    this.catchPhrase = faker.company.catchPhrase();
+  }
+
+  markerContent(): string {
+    return `<h2>Company Name: ${this.companyName}</h2> 
+            <p>Catch Phrase: ${this.catchPhrase}</p>`;
   }
 }
