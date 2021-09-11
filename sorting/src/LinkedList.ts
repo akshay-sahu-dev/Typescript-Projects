@@ -1,4 +1,6 @@
-export class LinkedList {
+import { Sorter } from './sorter';
+
+export class LinkedList extends Sorter {
   head: Node | null = null;
 
   add(data: number): void {
